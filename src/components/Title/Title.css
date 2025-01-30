@@ -1,0 +1,22 @@
+.title-wrapper {
+  display: flex;
+  gap: 10px;
+
+  align-items: center;
+}
+.title-wrapper hr {
+  height: 50px;
+  width: 2px;
+  border: none;
+  background: #989898;
+}
+@media (max-width: 720px) {
+  .title-wrapper {
+    display: block;
+  }
+  .title-wrapper hr {
+    height: 1px;
+    width: 100%;
+    margin: 0;
+  }
+}

@@ -1,0 +1,41 @@
+.app-navbar {
+  /* position: absolute; */
+  top: 0;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  z-index: 1;
+  width: 100%;
+}
+/* .app {
+  position: relative;
+  background: #000;
+  height: max-content;
+} */
+.go-up {
+  position: fixed;
+  bottom: 10%;
+  right: 2%;
+  z-index: 1;
+  animation: fadeInMove 0.7s;
+}
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    right: 0%;
+  }
+  100% {
+    opacity: 1;
+    right: 2%;
+  }
+}
+.go-up button {
+  padding: 10px;
+  background: var(--main-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+button .up-icon {
+  color: #fff;
+  font-size: 20px;
+}

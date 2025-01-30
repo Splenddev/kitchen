@@ -1,0 +1,47 @@
+.nolo {
+  box-shadow: 0px 0px 5px 3px #00000063;
+  transition: all ease 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+  display: grid;
+  column-gap: 10px;
+  cursor: pointer;
+  height: 180px;
+  padding: 10px 0;
+  grid-template-columns: 100px 1fr;
+}
+.nolo:hover {
+  box-shadow: 0px 0px 2px 3px #00000015;
+}
+.nolo:active {
+  box-shadow: 0px 0px 5px 5px #00000063;
+}
+
+.image_container {
+  background: #555;
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+.image_container img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+.other-contemts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #000;
+}
+.other-contemts h2 {
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.other-contemts h2:hover {
+  padding-left: 10px;
+}
+.location {
+  display: flex;
+  gap: 10px;
+}
