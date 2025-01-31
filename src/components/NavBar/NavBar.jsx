@@ -59,7 +59,7 @@ const NavBar = () => {
         <div className="navbar-sub-locations">
           <div className="basket-container">
             <p>
-              <Link to="/cart">
+              <Link to="/kitchen/cart">
                 {getTotalCartAmount() != 0 ? (
                   <span className="dot">{getTotalCartQuantity()}</span>
                 ) : (

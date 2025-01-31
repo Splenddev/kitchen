@@ -15,7 +15,7 @@ const IconicRestaurants = ({ image, name, location }) => {
     console.log('ji');
 
     setRestaurantsView({ name, image, location });
-    navigate('/restaurants');
+    navigate('/kitchen/restaurants');
   };
   return (
     <div

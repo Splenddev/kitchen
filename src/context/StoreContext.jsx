@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from 'react';
 import { food_list } from '../assets/assets/frontend_assets/assets';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const StoreContext = createContext(null);
@@ -28,20 +28,6 @@ const StoreContextProvider = (props) => {
       setAlerted(true);
     }
   });
-  const navigate = useNavigate();
-  const location = useLocation();
-  const pages = ['/', '/cart', '/points', '/details'];
-  const currIndex = pages.indexOf(location.pathname);
-  function nextPage() {
-    if (currIndex < pages.length - 1) {
-      navigate(pages[currIndex + 1]);
-    }
-  }
-  function prevPage() {
-    if (currIndex > 0) {
-      navigate(pages[currIndex - 1]);
-    }
-  }
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -145,12 +131,12 @@ const StoreContextProvider = (props) => {
     setRestaurantsView,
     filterIcon,
     setFilterIcon,
-    nextPage,
+
     selectState,
     icon,
     setIcon,
     setSelectState,
-    prevPage,
+    // prevPage,nextPage,
     getTotalCartQuantity,
   };
   return (

@@ -1,7 +1,9 @@
+import { useLocation } from 'react-router-dom';
 import { assets } from '../../assets/assets/frontend_assets/assets';
 import './Footer.css';
 
 const Footer = () => {
+  const location = useLocation();
   return (
     <div
       className="footer"
@@ -47,7 +49,13 @@ const Footer = () => {
       <p className="copyright">
         Copyright 2024 @ Tomato.com - All Rights Reserved.
       </p>
-      <span className="copyright">The Dev Teams</span>
+      <span
+        onClick={() => {
+          console.log(location.pathname);
+        }}
+        className="copyright">
+        The Dev Teams
+      </span>
     </div>
   );
 };
