@@ -19,13 +19,14 @@ a {
   cursor: pointer;
 }
 .app {
-  width: 95%;
+  width: 85%;
   position: relative;
   /* background: #00000090; */
-  margin: 10px auto;
+  margin: auto;
+  transition: 0.3s ease;
 }
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   .app {
-    width: 100%;
+    width: 93%;
   }
 }

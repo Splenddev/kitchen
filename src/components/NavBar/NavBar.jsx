@@ -45,7 +45,7 @@ const NavBar = () => {
       id="navbar">
       <div className="navbar">
         <div className="logo-container">
-          <Link to="/">
+          <Link to="/kitchen/">
             <img
               className="logo"
               src={assets.logo}

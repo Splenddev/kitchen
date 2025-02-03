@@ -10,7 +10,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import BackNav from '../../components/BackNav/BackNav';
 import { NavLink } from 'react-router-dom';
-import FoodDetails from '../FoodDetails/FoodDetails';
 
 const Cart = () => {
   const {
@@ -21,14 +20,7 @@ const Cart = () => {
     removeAllFromCart,
     getTotalCartAmount,
     viewDetailsHandler,
-    closePopup,
-    isOpen,
-    foodView,
     getTotalCartQuantity,
-    // setFoodView,
-    // checked,
-    // setIcon,
-    // setSelectState,
     setCartToZero,
   } = useContext(StoreContext);
 
@@ -38,7 +30,9 @@ const Cart = () => {
     if (getTotalCartAmount() === 0) {
       return setPaymentButton(false);
     }
-    alert('Order Request Submitted');
+    paymentButton
+      ? alert('Order Request Submitted')
+      : alert('Cant Proceed. Check the Informations and try again');
   };
   // const navigate = useNavigate();
   // const viewDetailsHandler = (name, kitchen, id, description) => {
@@ -57,16 +51,7 @@ const Cart = () => {
   return (
     <>
       <BackNav goto={'back'} />
-      <div className={`side-popup ${isOpen ? 'open' : ''}`}>
-        <button
-          className="toogle-btn"
-          onClick={closePopup}>
-          Close PopUp
-        </button>
-        <div className="popup-contents">
-          <FoodDetails foodView={foodView} />
-        </div>
-      </div>
+
       <div className="cart-options">
         <button
           className={getTotalCartAmount() === 0 ? 'no-product' : ''}
@@ -83,7 +68,7 @@ const Cart = () => {
       {getTotalCartAmount() === 0 ? (
         <p className="no-food-to-display">
           There is no food here. Please select food from the{' '}
-          <NavLink to={'/'}>homepage</NavLink>
+          <NavLink to={'/kitchen/'}>homepage</NavLink>
         </p>
       ) : (
         <div className="cart-foods">
@@ -114,7 +99,7 @@ const Cart = () => {
                     <div className="cart-items-right-middle">
                       <button
                         className="btn"
-                        onClick={() =>
+                        onClick={() => {
                           viewDetailsHandler(
                             item.name,
                             item.kitchen,
@@ -122,8 +107,8 @@ const Cart = () => {
                             item._id,
                             item.k_image,
                             item.image
-                          )
-                        }>
+                          );
+                        }}>
                         View Food Details
                       </button>
                     </div>

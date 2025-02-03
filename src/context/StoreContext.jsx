@@ -85,15 +85,8 @@ const StoreContextProvider = (props) => {
 
     return totalAmount;
   };
-  const viewDetailsHandler = (
-    name,
-    kitchen,
-    description,
-    id,
-    kitchenImage,
-    image
-  ) => {
-    setFoodView({ name, kitchen, description, id, kitchenImage, image });
+  const viewDetailsHandler = () => {
+    // setFoodView({ name, kitchen, description, id, kitchenImage, image });
     // window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     // navigate('/details');
     openPopup();

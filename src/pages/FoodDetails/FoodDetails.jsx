@@ -2,7 +2,7 @@
 import BackNav from '../../components/BackNav/BackNav';
 import './FoodDetails.css';
 // import image from '../../../public/header_5.jpg';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { StoreContext } from '../../context/StoreContext';
 
-const FoodDetails = ({ foodView }) => {
+const FoodDetails = () => {
   // useState
   // const [cartIcon, setCartIcon] = useState('cart');
   const location = useLocation();
@@ -20,6 +20,7 @@ const FoodDetails = ({ foodView }) => {
     addToCart,
     removeFromCart,
     icon,
+    foodView,
     setIcon,
     selectState,
     setSelectState,

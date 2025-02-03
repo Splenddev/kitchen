@@ -17,37 +17,37 @@ const TopMenu = ({
   // const navigate = useNavigate();
   // const [inputCheckBox, setInputCheckBox] = useState(false);
   const {
-    setFoodView,
-    setSelectState,
     addToCart,
-    openPopup,
     removeFromCart,
-    setIcon,
     setChecked,
-    checked,
+    viewDetailsHandler,
+    setFoodView,
   } = useContext(StoreContext);
-  const viewDetailsHandler = () => {
-    setFoodView({ name, kitchen, description, id, kitchenImage, image });
-    // window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-    // navigate('/details');
-    openPopup();
-    if (checked) {
-      setSelectState('Selected');
-      setIcon(true);
-      setChecked(false);
-    } else if (!checked) {
-      setSelectState('Select Me!');
-      setIcon(false);
-      setChecked(false);
-    }
-  };
+  // const viewDetailsHandler = () => {
+  //   setFoodView({ name, kitchen, description, kitchenImage, id, image });
+  //   // window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+  //   // navigate('/details');
+  //   openPopup();
+  //   if (checked) {
+  //     setSelectState('Selected');
+  //     setIcon(true);
+  //     setChecked(false);
+  //   } else if (!checked) {
+  //     setSelectState('Select Me!');
+  //     setIcon(false);
+  //     setChecked(false);
+  //   }
+  // };
   const checkboxHandler = (e) => {
+    setChecked(e.target.checked);
     if (e.target.checked) {
       setChecked(e.target.checked);
       addToCart(id);
-    } else {
+      setFoodView({ name, kitchen, description, id, kitchenImage, image });
+    } else if (!e.target.checked) {
       setChecked(false);
       removeFromCart(id);
+      setFoodView({});
     }
   };
   return (
@@ -79,7 +79,28 @@ const TopMenu = ({
         </div>
       </div>
       <div className="view-details___price">
-        <button onClick={viewDetailsHandler}>View Food Details</button>
+        <button
+          onClick={() => {
+            setFoodView({
+              name,
+              kitchen,
+              description,
+              id,
+              kitchenImage,
+              image,
+            });
+            viewDetailsHandler();
+            // (
+            //   name,
+            //   kitchen,
+            //   description,
+            //   kitchenImage,
+            //   id,
+            //   image
+            // )
+          }}>
+          View Food Details
+        </button>
         <p className="price">${price}</p>
       </div>
     </div>

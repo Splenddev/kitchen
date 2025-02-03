@@ -6,7 +6,7 @@
   border: none;
   background: #000;
 }
-.home .navbar-locations {
+.navbar-locations {
   display: flex;
   background: var(--main-color);
   justify-content: space-around;
